@@ -1,0 +1,54 @@
+D:\part12-FSO\part12-containers-applications>docker start -i eloquent_elion
+root@f7ab143868cc:/# nano /usr/src/app/index.js
+
+root@f7ab143868cc:/# apt-get update
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [25.8 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1530 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [839 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [960 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1123 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1962 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [1027 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [29.4 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [24.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [50.8 kB]
+Fetched 21.0 MB in 10s (2021 kB/s)
+Reading package lists... Done
+root@f7ab143868cc:/# apt-get -y install nano
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 269 kB of archives.
+After this operation, 868 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 nano amd64 4.8-1ubuntu1 [269 kB]
+Fetched 269 kB in 0s (902 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... 4127 files and directories currently installed.)
+Preparing to unpack .../nano_4.8-1ubuntu1_amd64.deb ...
+Unpacking nano (4.8-1ubuntu1) ...
+Setting up nano (4.8-1ubuntu1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+root@f7ab143868cc:/# mkdir /usr/src/app
+root@f7ab143868cc:/# cd /usr/src/app
+root@f7ab143868cc:/usr/src/app# touch index.js
+root@f7ab143868cc:/usr/src/app# ls
+index.js
+root@f7ab143868cc:/usr/src/app# exit
+exit
