@@ -1,0 +1,58 @@
+vixen@DESKTOP-5D8NLPN:/mnt/d/part12-FSO/part12-containers-applications/todo-app/todo-backend$ docker exec -it todo-backend-mongo-1 mongo -u root -p 
+MongoDB shell version v5.0.6
+Enter password: 
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("22e7ac5b-3077-4593-afe0-9e9d7867f8a8") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2022-02-11T10:46:40.332+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-02-11T10:46:41.425+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you       
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database
+switched to db the_database
+> show collections
+todos
+> db.todos.find({})
+{ "_id" : ObjectId("62063e8f8dd66851dd263b13"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("62063e8f8dd66851dd263b14"), "text" : "Learn about containers", "done" : false }
+> db.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":false})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6206409bc5665c4e507a1aed")
+}
+> db.todos.find({})
+{ "_id" : ObjectId("62063e8f8dd66851dd263b13"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("62063e8f8dd66851dd263b14"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("6206409bc5665c4e507a1aed"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> exit
+bye
