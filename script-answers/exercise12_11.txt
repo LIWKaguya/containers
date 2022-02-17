@@ -1,0 +1,18 @@
+vixen@DESKTOP-5D8NLPN:/mnt/d/part12-FSO/part12-containers-applications/todo-app/todo-backend$ docker exec -it todo-backend-redis-1 redis-cli
+127.0.0.1:6379> KEYS *
+1) "count"
+127.0.0.1:6379> GET "count"
+1
+127.0.0.1:6379> SET "count" 9001
+OK
+127.0.0.1:6379> GET "count"
+"9001"
+127.0.0.1:6379> GET "count"
+"9002"
+127.0.0.1:6379> DEL "count"
+(integer) 1
+127.0.0.1:6379> GET "count"
+(nil)
+127.0.0.1:6379> GET "count"
+1
+127.0.0.1:6379> exit
